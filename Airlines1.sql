@@ -136,5 +136,93 @@ VALUES
 
 
 
+UPDATE airlines_info SET CeoName = 'Anne Das' WHERE AirlineId = 1;
+UPDATE airlines_info SET Headquarters = 'New DelhiHQ' WHERE AirlineId = 2;
+UPDATE airlines_info SET Alliance = 'Super50' WHERE AirlineId = 3;
+UPDATE airlines_info SET NumberOfAircraft = 50 WHERE AirlineId = 4;
+UPDATE airlines_info SET BaseCountry = 'United Kingdom of America' WHERE AirlineId = 5;
+UPDATE airlines_info SET EstablishedYear = 1990 WHERE AirlineId = 6;
+UPDATE airlines_info SET CeoName = 'Francies' WHERE AirlineId = 7;
+UPDATE airlines_info SET Headquarters = 'Singapore Main headquatrters' WHERE AirlineId = 8;
+UPDATE airlines_info SET Alliance = 'WorldFlyers' WHERE AirlineId = 9;
+UPDATE airlines_info SET NumberOfAircraft = 110 WHERE AirlineId = 10;
+
+UPDATE country_info SET NationalCurrency = 'NewINR' WHERE CountryId = 1;
+UPDATE country_info SET WorldRegion = 'Americas region' WHERE CountryId = 2;
+UPDATE country_info SET TotalPopulation = 145670 WHERE CountryId = 3;
+UPDATE country_info SET GDP = 3.75 WHERE CountryId = 4;
+UPDATE country_info SET OfficialLanguage = 'Deutsch Eng' WHERE CountryId = 5;
+UPDATE country_info SET IndependenceYear = 1845 WHERE CountryId = 6;
+UPDATE country_info SET NationalCurrency = 'JPYUpdated' WHERE CountryId = 7;
+UPDATE country_info SET WorldRegion = 'Asia Pacific Ocean' WHERE CountryId = 8;
+UPDATE country_info SET GDP = 2.56 WHERE CountryId = 9;
+UPDATE country_info SET TotalPopulation = 2559080 WHERE CountryId = 10;
+
+UPDATE state_info SET LanguageSpoken = 'Hale Kannada' WHERE StateId = 1;
+UPDATE state_info SET StateCapital = 'Puna' WHERE StateId = 2;
+UPDATE state_info SET LiteracyRate = 80.50 WHERE StateId = 3;
+UPDATE state_info SET CitizenCount = 8960000 WHERE StateId = 4;
+UPDATE state_info SET Area = 72540 WHERE StateId = 5;
+UPDATE state_info SET LanguageSpoken = 'French Eng' WHERE StateId = 6;
+UPDATE state_info SET StateCapital = 'SydneyMetro' WHERE StateId = 7;
+UPDATE state_info SET LiteracyRate = 99.15 WHERE StateId = 8;
+UPDATE state_info SET Area = 163000 WHERE StateId = 9;
+UPDATE state_info SET CitizenCount = 4789620 WHERE StateId = 10;
+
+
+
+DELETE FROM airlines_info WHERE AirlineId = 20;
+DELETE FROM airlines_info WHERE EstablishedYear > 2000 AND NumberOfAircraft < 150;
+DELETE FROM airlines_info WHERE BaseCountry = 'USA' OR BaseCountry = 'India';
+DELETE FROM airlines_info WHERE AirlineId IN (13, 14, 15);
+DELETE FROM airlines_info WHERE AirlineId NOT IN (1, 2, 3);
+DELETE FROM airlines_info WHERE EstablishedYear BETWEEN 1930 AND 1950;
+DELETE FROM airlines_info WHERE NumberOfAircraft NOT BETWEEN 200 AND 800;
+
+DELETE FROM country_info WHERE CountryName = 'Argentina';
+DELETE FROM country_info WHERE GDP < 1.0 AND TotalPopulation > 50000000;
+DELETE FROM country_info WHERE WorldRegion = 'Asia' OR WorldRegion = 'Africa';
+DELETE FROM country_info WHERE CountryId IN (11, 12, 13);
+DELETE FROM country_info WHERE CountryId NOT IN (1, 2, 3);
+DELETE FROM country_info WHERE IndependenceYear BETWEEN 1800 AND 1950;
+DELETE FROM country_info WHERE GDP NOT BETWEEN 2.0 AND 5.0;
+
+DELETE FROM state_info WHERE StateName = 'Lagos';
+DELETE FROM state_info WHERE LiteracyRate < 80 AND CitizenCount > 50000000;
+DELETE FROM state_info WHERE StateCountry = 'India' OR StateCountry = 'USA';
+DELETE FROM state_info WHERE StateId IN (11, 12, 13);
+DELETE FROM state_info WHERE StateId NOT IN (1, 2, 3);
+DELETE FROM state_info WHERE Area BETWEEN 10000 AND 800000;
+DELETE FROM state_info WHERE LiteracyRate NOT BETWEEN 85.0 AND 99.0;
+
+
+
+SELECT * FROM airlines_info WHERE BaseCountry = 'India';
+SELECT * FROM country_info WHERE WorldRegion = 'Asia';
+SELECT * FROM state_info WHERE CitizenCount > 50000000;
+
+SELECT * FROM airlines_info WHERE NumberOfAircraft > 200 AND EstablishedYear < 2000;
+SELECT * FROM airlines_info WHERE BaseCountry = 'USA' OR BaseCountry = 'UK';
+SELECT * FROM airlines_info WHERE AirlineId IN (5, 7, 10);
+SELECT * FROM airlines_info WHERE AirlineId NOT IN (1, 2, 3);
+SELECT * FROM airlines_info WHERE EstablishedYear BETWEEN 1950 AND 2000;
+SELECT * FROM airlines_info WHERE NumberOfAircraft NOT BETWEEN 300 AND 800;
+
+SELECT * FROM country_info WHERE GDP > 2.0 AND TotalPopulation < 1500000000;
+SELECT * FROM country_info WHERE WorldRegion = 'Europe' OR WorldRegion = 'Asia';
+SELECT * FROM country_info WHERE CountryId IN (1, 2, 3, 4);
+SELECT * FROM country_info WHERE CountryId NOT IN (11, 12, 13);
+SELECT * FROM country_info WHERE IndependenceYear BETWEEN 1700 AND 1950;
+SELECT * FROM country_info WHERE GDP NOT BETWEEN 1.0 AND 3.0;
+
+SELECT * FROM state_info WHERE Area > 20000 AND LiteracyRate > 85;
+SELECT * FROM state_info WHERE StateCountry = 'India' OR StateCountry = 'USA';
+SELECT * FROM state_info WHERE StateId IN (1, 3, 5, 7);
+SELECT * FROM state_info WHERE StateId NOT IN (2, 4, 6, 8);
+SELECT * FROM state_info WHERE LiteracyRate BETWEEN 80.0 AND 95.0;
+SELECT * FROM state_info WHERE CitizenCount NOT BETWEEN 10000000 AND 50000000;
+
+
+
 
 
