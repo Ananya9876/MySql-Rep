@@ -184,4 +184,18 @@ SELECT * FROM Astronauts WHERE AstronautId BETWEEN 10 AND 20;
 SELECT * FROM Astronauts WHERE ExperienceYears NOT BETWEEN 5 AND 10;
 
 
+UPDATE Spaceships SET SpaceStatus = 'Decommissioned' WHERE Capacity BETWEEN 2 AND 4;
+UPDATE Spaceships SET FuelType = 'Hybrid' WHERE SpaceshipId IN (5, 9, 15);
+UPDATE Spaceships SET Manufacturer = 'Global Space Org' WHERE SpaceshipId NOT IN (1, 2, 3);
+
+UPDATE Missions SET MissionStatus = 'Delayed' WHERE DurationDays > 30 OR MissionStatus = 'Planned';
+UPDATE Missions SET Destination = 'Deep Space' WHERE MissioNId IN (16, 20);
+UPDATE Missions SET DurationDays = 10 WHERE MissioNId NOT BETWEEN 1 AND 10;
+
+UPDATE Astronauts SET HealthStatus = 'Training' WHERE Age BETWEEN 28 AND 35;
+UPDATE Astronauts SET AstronautRole = 'Mission Specialist' WHERE AstronautId IN (206, 209, 213);
+UPDATE Astronauts SET Nationality = 'Alliance' WHERE AstronautId NOT IN (201, 204, 210);
+
+
+
 
