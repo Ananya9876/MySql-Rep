@@ -196,8 +196,62 @@ UPDATE Astronauts SET HealthStatus = 'Training' WHERE Age BETWEEN 28 AND 35;
 UPDATE Astronauts SET AstronautRole = 'Mission Specialist' WHERE AstronautId IN (206, 209, 213);
 UPDATE Astronauts SET Nationality = 'Alliance' WHERE AstronautId NOT IN (201, 204, 210);
 
+SELECT count(*) AS count_space from Spaceships;
+SELECT count(*) AS count_mission from Missions;
+SELECT count(*) AS count_astronaut from Astronauts;
+
+SELECT SUM(Capacity) AS sum_capacity FROM Spaceships;
+SELECT SUM(DurationDays) AS sum_durationdays FROM Missions;
+SELECT SUM(ExperienceYears) AS sum_experianceyears FROM Astronauts;
+
+SELECT MAX(Age) as max_age from Astronauts;
+SELECT SpaceName, max(Capacity) as max_capacity from Spaceships;
+
+SELECT min(DurationDays) as min_durationdays from Missions;
+
+select avg(ExperienceYears) as avg_expyears from Astronauts;
 
 
+
+select max(Capacity) as max_cap from Spaceships
+where FuelType = 'Liquid Hydrogen';
+
+SELECT sum(DurationDays) as total_durdays from Missions
+where MissionStatus = 'Completed';
+
+SELECT max(ExperienceYears) as max_expyears from Astronauts
+where AstronautRole = 'Commander';
+
+SELECT min(Capacity) as min_fuel from Spaceships
+where FuelType = 'Kerosene';
+
+SELECT NissionName, max(SpaceshipId) as max_id from Missions
+where MissionStatus = 'Completed';
+
+SELECT sum(DurationDays) as total_days from Missions
+where MissioNId <= 10;
+
+SELECT sum(ExperienceYears) as total_years from Astronauts limit 10;
+
+
+
+
+
+
+select * from Missions;
+
+SELECT MissionStatus,count(DurationDays) from Missions group by MissionStatus;
+
+SELECT sum(ExperienceYears), AstronautRole from Astronauts group by AstronautRole;
+
+
+SELECT FuelType, min(Capacity) as min_cap from Spaceships
+group by FuelType;
+
+
+
+SELECT FuelType, min(Capacity) as min_capacity from Spaceships
+group by FuelType HAVING min_capacity > 3;
 
 
 
